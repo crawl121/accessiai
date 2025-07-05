@@ -1,0 +1,358 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primary Colors */
+    --color-primary: #2563EB; /* blue-600 */
+    --color-primary-50: #EFF6FF; /* blue-50 */
+    --color-primary-100: #DBEAFE; /* blue-100 */
+    --color-primary-200: #BFDBFE; /* blue-200 */
+    --color-primary-500: #3B82F6; /* blue-500 */
+    --color-primary-600: #2563EB; /* blue-600 */
+    --color-primary-700: #1D4ED8; /* blue-700 */
+    --color-primary-800: #1E40AF; /* blue-800 */
+    --color-primary-900: #1E3A8A; /* blue-900 */
+    --color-primary-foreground: #FFFFFF; /* white */
+
+    /* Secondary Colors */
+    --color-secondary: #059669; /* emerald-600 */
+    --color-secondary-50: #ECFDF5; /* emerald-50 */
+    --color-secondary-100: #D1FAE5; /* emerald-100 */
+    --color-secondary-200: #A7F3D0; /* emerald-200 */
+    --color-secondary-500: #10B981; /* emerald-500 */
+    --color-secondary-600: #059669; /* emerald-600 */
+    --color-secondary-700: #047857; /* emerald-700 */
+    --color-secondary-800: #065F46; /* emerald-800 */
+    --color-secondary-900: #064E3B; /* emerald-900 */
+    --color-secondary-foreground: #FFFFFF; /* white */
+
+    /* Accent Colors */
+    --color-accent: #DC2626; /* red-600 */
+    --color-accent-50: #FEF2F2; /* red-50 */
+    --color-accent-100: #FEE2E2; /* red-100 */
+    --color-accent-200: #FECACA; /* red-200 */
+    --color-accent-500: #EF4444; /* red-500 */
+    --color-accent-600: #DC2626; /* red-600 */
+    --color-accent-700: #B91C1C; /* red-700 */
+    --color-accent-800: #991B1B; /* red-800 */
+    --color-accent-900: #7F1D1D; /* red-900 */
+    --color-accent-foreground: #FFFFFF; /* white */
+
+    /* Background Colors */
+    --color-background: #FAFAFA; /* gray-50 */
+    --color-background-secondary: #F5F5F5; /* neutral-100 */
+    --color-surface: #FFFFFF; /* white */
+    --color-surface-secondary: #F9FAFB; /* gray-50 */
+
+    /* Text Colors */
+    --color-text-primary: #111827; /* gray-900 */
+    --color-text-secondary: #6B7280; /* gray-500 */
+    --color-text-tertiary: #9CA3AF; /* gray-400 */
+    --color-text-inverse: #FFFFFF; /* white */
+
+    /* Status Colors */
+    --color-success: #10B981; /* emerald-500 */
+    --color-success-50: #ECFDF5; /* emerald-50 */
+    --color-success-100: #D1FAE5; /* emerald-100 */
+    --color-success-200: #A7F3D0; /* emerald-200 */
+    --color-success-600: #059669; /* emerald-600 */
+    --color-success-700: #047857; /* emerald-700 */
+    --color-success-foreground: #FFFFFF; /* white */
+
+    --color-warning: #F59E0B; /* amber-500 */
+    --color-warning-50: #FFFBEB; /* amber-50 */
+    --color-warning-100: #FEF3C7; /* amber-100 */
+    --color-warning-200: #FDE68A; /* amber-200 */
+    --color-warning-600: #D97706; /* amber-600 */
+    --color-warning-700: #B45309; /* amber-700 */
+    --color-warning-foreground: #FFFFFF; /* white */
+
+    --color-error: #EF4444; /* red-500 */
+    --color-error-50: #FEF2F2; /* red-50 */
+    --color-error-100: #FEE2E2; /* red-100 */
+    --color-error-200: #FECACA; /* red-200 */
+    --color-error-600: #DC2626; /* red-600 */
+    --color-error-700: #B91C1C; /* red-700 */
+    --color-error-foreground: #FFFFFF; /* white */
+
+    /* Border Colors */
+    --color-border: #E5E7EB; /* gray-200 */
+    --color-border-secondary: #D1D5DB; /* gray-300 */
+    --color-border-focus: #2563EB; /* blue-600 */
+
+    /* Shadow Colors */
+    --color-shadow: rgba(0, 0, 0, 0.1); /* black with 10% opacity */
+    --color-shadow-medium: rgba(0, 0, 0, 0.15); /* black with 15% opacity */
+    --color-shadow-strong: rgba(0, 0, 0, 0.25); /* black with 25% opacity */
+
+    /* Focus Ring */
+    --focus-ring-width: 3px;
+    --focus-ring-color: #2563EB; /* blue-600 */
+    --focus-ring-offset: 2px;
+  }
+
+  /* Dark mode variables */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-background: #111827; /* gray-900 */
+      --color-background-secondary: #1F2937; /* gray-800 */
+      --color-surface: #1F2937; /* gray-800 */
+      --color-surface-secondary: #374151; /* gray-700 */
+      
+      --color-text-primary: #F9FAFB; /* gray-50 */
+      --color-text-secondary: #D1D5DB; /* gray-300 */
+      --color-text-tertiary: #9CA3AF; /* gray-400 */
+      
+      --color-border: #374151; /* gray-700 */
+      --color-border-secondary: #4B5563; /* gray-600 */
+    }
+  }
+
+  /* Base styles */
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-text-primary font-body;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Enhanced focus styles for accessibility */
+  *:focus-visible {
+    outline: var(--focus-ring-width) solid var(--focus-ring-color);
+    outline-offset: var(--focus-ring-offset);
+    border-radius: 4px;
+  }
+
+  /* Skip link for keyboard navigation */
+  .skip-link {
+    @apply absolute -top-10 left-4 z-50 bg-primary text-primary-foreground px-4 py-2 rounded-md;
+    @apply focus:top-4 transition-all duration-200;
+  }
+
+  /* Reduced motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    :root {
+      --color-border: #000000;
+      --color-text-primary: #000000;
+      --color-background: #FFFFFF;
+    }
+  }
+
+  /* Typography base styles */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-semibold leading-tight;
+  }
+
+  h1 {
+    @apply text-4xl lg:text-5xl;
+  }
+
+  h2 {
+    @apply text-3xl lg:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl lg:text-3xl;
+  }
+
+  h4 {
+    @apply text-xl lg:text-2xl;
+  }
+
+  h5 {
+    @apply text-lg lg:text-xl;
+  }
+
+  h6 {
+    @apply text-base lg:text-lg;
+  }
+
+  p {
+    @apply text-base leading-relaxed;
+  }
+
+  /* Button base styles */
+  button {
+    @apply cursor-pointer transition-all duration-200 ease-out;
+    min-height: 44px; /* Minimum touch target size */
+    min-width: 44px;
+  }
+
+  button:disabled {
+    @apply cursor-not-allowed opacity-50;
+  }
+
+  /* Input base styles */
+  input, textarea, select {
+    @apply transition-all duration-200 ease-out;
+    min-height: 44px; /* Minimum touch target size */
+  }
+
+  /* Link base styles */
+  a {
+    @apply transition-colors duration-200 ease-out;
+  }
+
+  a:focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2 rounded-sm;
+  }
+}
+
+@layer components {
+  /* Accessibility toolbar styles */
+  .accessibility-toolbar {
+    @apply fixed top-0 left-0 right-0 z-[1000] bg-surface border-b border-border;
+    @apply px-4 py-2 flex items-center justify-between;
+    @apply shadow-sm backdrop-blur-sm;
+  }
+
+  /* Navigation styles */
+  .main-navigation {
+    @apply fixed left-0 top-16 bottom-0 w-64 bg-surface border-r border-border;
+    @apply transform transition-transform duration-300 ease-out;
+    @apply lg:translate-x-0 -translate-x-full z-[900];
+  }
+
+  .main-navigation.open {
+    @apply translate-x-0;
+  }
+
+  /* Navigation overlay for mobile */
+  .nav-overlay {
+    @apply fixed inset-0 bg-black bg-opacity-50 z-[850];
+    @apply lg:hidden;
+  }
+
+  /* Tool launcher grid */
+  .tool-launcher-grid {
+    @apply grid gap-6;
+    @apply grid-cols-1 md:grid-cols-2 lg:grid-cols-3;
+  }
+
+  /* Emergency access panel */
+  .emergency-access-panel {
+    @apply fixed bottom-6 right-6 z-[1100];
+  }
+
+  /* Card component */
+  .card {
+    @apply bg-surface rounded-lg border border-border shadow-sm;
+    @apply p-6 transition-all duration-200 ease-out;
+  }
+
+  .card:hover {
+    @apply shadow-md;
+  }
+
+  /* Focus ring utility */
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2;
+  }
+
+  /* Screen reader only text */
+  .sr-only {
+    @apply absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0;
+    clip: rect(0, 0, 0, 0);
+  }
+
+  /* High contrast border utility */
+  .hc-border {
+    @apply border border-border;
+  }
+
+  @media (prefers-contrast: high) {
+    .hc-border {
+      @apply border-2 border-black;
+    }
+  }
+}
+
+@layer utilities {
+  /* Spacing utilities following 8px grid */
+  .space-xs { @apply space-y-2; }
+  .space-sm { @apply space-y-4; }
+  .space-md { @apply space-y-6; }
+  .space-lg { @apply space-y-8; }
+  .space-xl { @apply space-y-12; }
+
+  /* Text size utilities with fluid scaling */
+  .text-fluid-sm {
+    font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+  }
+
+  .text-fluid-base {
+    font-size: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+  }
+
+  .text-fluid-lg {
+    font-size: clamp(1.125rem, 1rem + 0.625vw, 1.25rem);
+  }
+
+  .text-fluid-xl {
+    font-size: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+  }
+
+  /* Animation utilities */
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  .animate-slide-in-left {
+    animation: slideInLeft 0.3s ease-out;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.3s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideInLeft {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+  }
+
+  @keyframes slideInRight {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+  }
+
+  /* Touch target utilities */
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Contrast utilities */
+  .contrast-high {
+    filter: contrast(1.2);
+  }
+
+  .contrast-higher {
+    filter: contrast(1.5);
+  }
+}
